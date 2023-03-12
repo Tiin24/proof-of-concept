@@ -53,8 +53,12 @@ Este es un proyecto de prueba de concepto para generar miniaturas a partir de im
 
 4. La miniatura se generará y se mostrará en la pantalla.
 
+5. Al generar la miniatura tendras la posibilidad de descargar y copiar la url de la imagen generada
+
 ## Contacto
 
-Si tienes preguntas o comentarios, no dudes en ponerte en contacto con el autor en 
+Si tienes preguntas o comentarios, no dudes en ponerte en contacto en
+
+https://www.linkedin.com/in/isaias-romero
 
 romeroisaiasagustin@gmail.com
