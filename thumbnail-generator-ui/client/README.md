@@ -1,6 +1,6 @@
 # Thumbnail Generator UI
 
-Este es un proyecto de prueba de concepto para generar miniaturas a partir de imágenes. La interfaz de usuario se construyó utilizando Reac, typescript con componentes de Material UI 
+Este es un proyecto de prueba de concepto para generar miniaturas a partir de imágenes. La interfaz de usuario se construyó utilizando Reac con Redux, typescript y los componentes fueron creados con de Material UI 
 
 ## Instalación
 
