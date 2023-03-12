@@ -33,11 +33,11 @@ Este es un proyecto de prueba de concepto para generar miniaturas a partir de im
 
 2. Construye la imagen de Docker
 
-  - docker build -t thumbnail-generator-ui .
+  - docker build -t DokerUser/ImageName
 
 3. Ejecuta el contenedor de Docker:
 
-  - docker run -p 3000:3000 thumbnail-generator-ui
+  - docker run -d -p 3000:3000 DokerUser/ImageName
 
 4. Abre la aplicación en tu navegador
 
