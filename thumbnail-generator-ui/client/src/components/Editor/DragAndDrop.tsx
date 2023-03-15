@@ -6,13 +6,15 @@ import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import { State } from "../../redux/reducer/reducer";
 import ResizeImage from "./ResizeImage";
 import Dropzone, { DropzoneState } from "react-dropzone";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 
 import KeyboardTabIcon from "@mui/icons-material/KeyboardTab";
 
 function DragAndDrop() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string>("");
+
+  const [loading, setLoading] = useState(false);
 
   const dispatch: Dispatch<any> = useDispatch();
 
@@ -27,7 +29,10 @@ function DragAndDrop() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (selectedFile) {
+      setLoading(true);
       dispatch(submitImage(selectedFile));
+
+      setTimeout(() => setLoading(false), 500);
     }
   };
 
@@ -35,7 +40,7 @@ function DragAndDrop() {
     e.preventDefault();
     setSelectedFile(null);
     setPreviewUrl("");
-    dispatch({ type: 'DELETE_IMG' });
+    dispatch({ type: "DELETE_IMG" });
   };
 
   return (
@@ -65,7 +70,6 @@ function DragAndDrop() {
           height: "332px",
         }}
       >
-
         <Typography fontSize={20}>Upload your Image</Typography>
         <Grid>
           <form
@@ -174,21 +178,26 @@ function DragAndDrop() {
           </form>
         </Grid>
       </Grid>
-      {uploadData && (
-        <Grid
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
-          <ResizeImage data={uploadData} />
-        </Grid>
+      {loading ? (
+        <div>
+          <CircularProgress />
+        </div>
+      ) : (
+        uploadData && (
+          <Grid
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "20px",
+            }}
+          >
+            <ResizeImage data={uploadData} />
+          </Grid>
+        )
       )}
     </Box>
   );
 }
 
 export default DragAndDrop;
-

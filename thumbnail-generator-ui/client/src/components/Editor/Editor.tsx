@@ -21,9 +21,18 @@ export default function Editor() {
         <DragAndDrop />
       </Grid>
     )) || (
-      <>
-        <h2>Error</h2>
-      </>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          backgroundColor: "#fafaff",
+          marginTop: "15%"
+        }}
+      >
+        <h2>Error: Debes logiarte para ingresar a este sitio</h2>
+      </Grid>
     )
   );
 }
